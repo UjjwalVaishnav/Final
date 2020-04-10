@@ -1,0 +1,32 @@
+<app-admin></app-admin>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Employee Name</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Leave</th>
+      <th>Leave Type</th>
+      
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let l of leaves,let i=index">
+      <td>{{employee[i].name}}</td>
+      <td>{{l.leaveStartDate |date}}</td>
+      <td>{{l.leaveEndDate|date}}</td>
+      <td>{{leaveConfig[i].maximumLeavesAllowed}}</td>
+      <td>{{leaveConfig[i].name}}</td>
+
+      <td>{{l.status}}</td>
+      <td><select name="action" id="action">
+        <option value="pending">--select--</option>
+        <option value="approve">Approve</option>
+        <option value="reject">Reject</option>
+      </select></td>
+    </tr>
+  </tbody>
+</table>

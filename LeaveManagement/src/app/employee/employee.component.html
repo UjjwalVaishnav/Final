@@ -1,0 +1,36 @@
+<app-admin></app-admin>
+<div style="float: right;">
+  <button [routerLink]="['/employees',0,'edit']">Add Employee</button>
+</div>
+  <div class="table-responsive">
+
+  <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Date of Birth</th>
+          <th>Date of Joining</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let e of employees">
+          <td>{{e.name}}</td>
+          <td>{{e.email}}</td>
+          <td>{{e.dob |date }}</td>
+          <td>{{e.doj |date}}</td>
+          <td>
+            <button class="btn btn-outline-primary btn-sm" [routerLink]="['/employees',e.id,'edit']">
+              Edit
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-outline-warning" style="width:80px" type="button" title="Delete this product" (click)="deleteEmployee(e.id)">
+            Delete
+          </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

@@ -1,0 +1,23 @@
+<app-user></app-user>
+ <div class="table-responsive">
+
+  <table class="table">
+      <tbody>
+        <tr>
+          <td>Name:-{{employee.name}}</td>
+        </tr>
+        <tr>
+          <td>Email:-{{employee.email}}</td>
+        </tr>
+        <tr>
+          <td>DOB:-{{employee.dob|date}}</td>
+        </tr>
+        <tr>
+          <td>DOJ:-{{employee.doj|date}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<button class="btn btn-outline-primary btn-sm" [routerLink]="['/profile',2,'edit']">
+  Update Profile
+</button>

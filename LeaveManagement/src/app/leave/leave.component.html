@@ -1,0 +1,24 @@
+<app-user></app-user>
+<div style="float: right;">
+  <button [routerLink]="['/leave',0,'edit']">Apply Leave</button>
+</div>
+<div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Leave Dates</th>
+      <th>Leave Type</th>
+      <th>Number of Days</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let l of leaves;let i=index">
+      <td>{{l.leaveStartDate|date}} to {{l.leaveEndDate|date}}</td>
+      <td>{{leaveConfig[i].name}}</td>
+      <td>{{leaveConfig[i].maximumLeavesAllowed}}</td>
+      <td>{{l.status}}</td>
+    </tr>
+  </tbody>
+</table>
+

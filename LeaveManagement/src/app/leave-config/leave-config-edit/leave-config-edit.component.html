@@ -1,0 +1,32 @@
+<app-admin></app-admin>
+
+<div class="container">
+  <form #form="ngForm" (ngSubmit)="saveLeaveConfig()">
+    <div class="form-group row">
+      <label class="col-md-2 col-form-label"
+             for="name">Name</label>
+      <div class="col-md-4">
+        <input class="form-control" id="name" type="text" placeholder="Name" required [(ngModel)]="leaveConfig.name" [ngModelOptions]="{standalone: true}"/>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-md-2 col-form-label"
+             for="MaximumLeaveAllowed">Maximum Leaves Allowed</label>
+      <div class="col-md-4">
+        <input class="form-control" id="maximumLeavesAllowed" required type="number" placeholder="MaximumLeaveAllowed" required [(ngModel)]="leaveConfig.maximumLeavesAllowed" [ngModelOptions]="{standalone: true}"/>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-md-1">
+        <input type="submit" value="Submit" />
+      </div>
+      <div class="col-md-1">
+        <button [routerLink]="['/leaveConfig']">Cancel</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+
